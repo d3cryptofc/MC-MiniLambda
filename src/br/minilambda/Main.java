@@ -11,7 +11,6 @@ public class Main extends JavaPlugin {
     private Logger logger;
     private Server server;
     private PluginManager plugin_manager;
-    private String version;
 
     @Override
     public void onEnable(){
