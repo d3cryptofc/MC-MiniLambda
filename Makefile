@@ -23,10 +23,10 @@ clean:
 	rm -rf **/*.class dist
 
 compile: ./lib/Spigot-API.jar clean
-	@echo -en '\n$(subject)Compiling `.java` files to `.class` files..$(command)'
+	@echo -en '$(subject)\nCompiling `.java` files to `.class` files..$(command)'
 	javac $(CLASSPATH) **/*.java
 
 build: compile
-	@echo -en '\n$(subject)Building JAR file..$(command)'
+	@echo -en '$(subject)\nBuilding JAR file..$(command)'
 	@mkdir -p dist
 	cd src && jar cf "../$(jarfile_output)" **/*.class ../*.yml && cd ..
