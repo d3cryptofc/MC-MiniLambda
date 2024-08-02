@@ -13,7 +13,7 @@
 Especificações:
 
 * Minecraft/Bukkit/Spigot 1.21.X
-* [Java Development Kit 17](https://github.com/d3cryptofc/MC-MiniLambda/new/main?readme=1#archlinux)
+* [Java Development Kit 17](https://github.com/d3cryptofc/MC-MiniLambda/tree/main#java-17-jdk)
 -----
 
 ###  Java 17 (JDK)
