@@ -72,7 +72,7 @@ wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifac
 
 2. Iniciando construção da Spigot-API.
 ```bash
-java -jar BuildTools.jar --nogui compile SPIGOT --rev 1.21
+java -jar BuildTools.jar --nogui --compile SPIGOT --rev 1.21
 ```
 
 3. Copiar para o diretório **lib**.
