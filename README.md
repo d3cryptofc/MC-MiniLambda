@@ -34,55 +34,23 @@ apt install openjdk-17-jdk
 
 ### Construção
 
-Antes de tudo, é necessário obter a **Spigot-API.jar** e copiar para a pasta **lib** deste projeto, talvez esteja com um nome diferente como `spigot-api-1.21-R0.1-SNAPSHOT.jar` e seja necessário renomear.
+#### 1. Spigot-API
 
-Há duas formas que conheço de conseguir a SpigotAPI:
+Antes de tudo, é necessário obter a **SpigotAPI**, e a forma mais simples de fazer isto é baixando diretamente da fonte.
 
-#### Mais fácil e rápida porém não recomendada
-
-1. Obter o servidor spigot em [getbukkit.org](https://getbukkit.org/download/spigot).
+1. Esteja dentro do repositório:
 ```bash
-# Criando uma pasta pro servidor.
-mkdir mc-server && cd mc-server
-
-# Fazendo download do servidor spigot.
-wget https://download.getbukkit.org/spigot/spigot-1.21.jar
-```
-2. Iniciar o servidor e para-lo para que gere a pasta **bundler**.
-```bash
-# Aceitação dos termos.
-echo eula=true > eula.txt
-
-# Iniciando o server.
-java -jar -DIReallyKnowWhatIAmDoingISwear spigot-1.21.jar nogui
-```
-Pressione `CTRL` + `C` para parar o servidor.
-
-3. Copiar para o diretório **lib**.
-```bash
-cp ./bundler/libraries/spigot-api-1.21*SNAPSHOT.jar ../MC-MiniLambda/lib/Spigot-API.jar
+cd MC-MiniLambda
 ```
 
-#### Mais demorada porém recomendada
-1. Obtendo o **BuildTools.jar** da Spigot.
+2. Baixe a Spigot-API para a pasta **lib**, nomeada como `Spigot-API.jar`:
 ```bash
-mkdir server-build && cd server-build
-wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+wget https://hub.spigotmc.org/nexus/repository/snapshots/org/spigotmc/spigot-api/1.21-R0.1-SNAPSHOT/spigot-api-1.21-R0.1-20240731.215921-84.jar -O ./lib/Spigot-API.jar
 ```
 
-2. Iniciando construção da Spigot-API.
-```bash
-java -jar BuildTools.jar --nogui --compile SPIGOT --rev 1.21
-```
-
-3. Copiar para o diretório **lib**.
-```bash
-cp ./Spigot/Spigot-API/target/spigot-api-1.21*SNAPSHOT.jar ../MC-MiniLambda/lib/Spigot-API.jar
-```
-
-#### Construir!
+#### 2. Construir!
 
 Se você fez tudo certo, agora resta apenas digitar `make` no terminal e a construção será feita no diretório **dist**.
 
 > [!IMPORTANT]
-> Lembre-se de estar na raiz do projeto, onde se encontra o `Makefile`.
+> Lembre-se de estar na raiz do projeto, onde se encontra o `Makefile`, caso contrário não será possível construir.
