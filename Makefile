@@ -10,7 +10,7 @@ command=\n\033[0;37;40m $$
 
 # PLUGIN NAME & VERSION
 plugin_name=$(shell grep -oP "name:\s*\K\w+" plugin.yml)
-plugin_version=$(shell grep -oP "version:\s*\K[A-Za-z0-9\.]+" plugin.yml)
+plugin_version=$(shell grep -oP "^version:\s*\K[A-Za-z0-9\.]+" plugin.yml)
 
 # JARFILE BUILD OUTPUT
 jarfile_output=dist/$(plugin_name)-$(plugin_version).jar
