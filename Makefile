@@ -18,6 +18,11 @@ jarfile_output=dist/$(plugin_name)-$(plugin_version).jar
 
 all: build
 
+lib/spigot-api*.jar:
+	@echo -e "$(subject)Baixando JAR Spigot-API..\033[m"
+	@curl \
+		'https://hub.spigotmc.org/nexus/repository/snapshots/org/spigotmc/spigot-api/1.21-R0.1-SNAPSHOT/spigot-api-1.21-R0.1-20240731.215921-84.jar' \
+		-O --output-dir lib -#
 clean:
 	@echo -en '$(subject)Limpando ambiente..$(command)'
 	rm -rf **/*.class dist
