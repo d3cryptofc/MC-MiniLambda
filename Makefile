@@ -30,11 +30,15 @@ lib/bungeecord-chat*.jar:
 		'https://oss.sonatype.org/service/local/repositories/snapshots/content/net/md-5/bungeecord-chat/1.21-R0.1-SNAPSHOT/bungeecord-chat-1.21-R0.1-20240728.110916-7.jar' \
 		-O --output-dir lib -#
 
+
+libs: lib/spigot-api*.jar lib/bungeecord-chat*.jar
+	@echo -e "$(subject)Todas as bibliotecas JAR necessárias estão prontas.\033[m"
+
 clean:
 	@echo -en '$(subject)Limpando ambiente..$(command)'
 	rm -rf **/*.class dist
 
-compile: ./lib/Spigot-API.jar clean
+compile: clean libs
 	@echo -en '$(subject)Compilando arquivos `.java` para arquivos `.class`..$(command)'
 	javac $(CLASSPATH) **/*.java
 
