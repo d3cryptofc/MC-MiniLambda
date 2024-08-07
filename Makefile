@@ -6,7 +6,7 @@ CLASSPATH=-cp lib/Spigot-API.jar
 
 # PREFIXES
 subject=\033[m\033[1;32m-> 
-command=\n\033[0;37;40m $$ 
+command=\n\033[0;37m $$ 
 
 # PLUGIN NAME & VERSION
 plugin_name=$(shell grep -oP "name:\s*\K\w+" plugin.yml)
