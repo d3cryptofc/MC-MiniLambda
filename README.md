@@ -34,23 +34,13 @@ apt install openjdk-17-jdk
 
 ### Construção
 
-#### 1. Spigot-API
+1. Clone e entre no repositório.
 
-Antes de tudo, é necessário obter a **SpigotAPI**, e a forma mais simples de fazer isto é baixando diretamente da fonte.
-
-1. Esteja dentro do repositório:
 ```bash
-cd MC-MiniLambda
+git clone https://github.com/d3cryptofc/MC-MiniLambda && cd MC-MiniLambda
 ```
 
-2. Baixe a Spigot-API para a pasta **lib**, nomeada como `Spigot-API.jar`:
-```bash
-wget https://hub.spigotmc.org/nexus/repository/snapshots/org/spigotmc/spigot-api/1.21-R0.1-SNAPSHOT/spigot-api-1.21-R0.1-20240731.215921-84.jar -O ./lib/Spigot-API.jar
-```
-
-#### 2. Construir!
-
-Se você fez tudo certo, agora resta apenas digitar `make` no terminal e a construção será feita no diretório **dist**.
+2. Agora digite o commando `make` e comece a rezar!
 
 > [!IMPORTANT]
 > Lembre-se de estar na raiz do projeto, onde se encontra o `Makefile`, caso contrário não será possível construir.
