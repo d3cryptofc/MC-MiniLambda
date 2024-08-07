@@ -2,7 +2,7 @@
 SHELL=/bin/bash -O globstar
 
 # JAVA LIBRARIES
-CLASSPATH=-cp lib/Spigot-API.jar
+CLASSPATH=-cp $(shell find lib -type f -name '*.jar' -printf "%p:")
 
 # PREFIXES
 subject=\033[m\033[1;32m-> 
