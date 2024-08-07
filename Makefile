@@ -19,14 +19,14 @@ jarfile_output=dist/$(plugin_name)-$(plugin_version).jar
 all: build
 
 clean:
-	@echo -en '$(subject)Cleaning environment..$(command)'
+	@echo -en '$(subject)Limpando ambiente..$(command)'
 	rm -rf **/*.class dist
 
 compile: ./lib/Spigot-API.jar clean
-	@echo -en '$(subject)\nCompiling `.java` files to `.class` files..$(command)'
+	@echo -en '$(subject)Compilando arquivos `.java` para arquivos `.class`..$(command)'
 	javac $(CLASSPATH) **/*.java
 
 build: compile
-	@echo -en '$(subject)\nBuilding JAR file..$(command)'
+	@echo -en '$(subject)Construindo JAR => $(jarfile_output)$(command)'
 	@mkdir -p dist
 	cd src && jar cf "../$(jarfile_output)" **/*.class ../*.yml && cd ..
