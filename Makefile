@@ -23,6 +23,13 @@ lib/spigot-api*.jar:
 	@curl \
 		'https://hub.spigotmc.org/nexus/repository/snapshots/org/spigotmc/spigot-api/1.21-R0.1-SNAPSHOT/spigot-api-1.21-R0.1-20240731.215921-84.jar' \
 		-O --output-dir lib -#
+
+lib/bungeecord-chat*.jar:
+	@echo -e "$(subject)Baixando JAR Bungeecord-Chat..\033[m"
+	@curl \
+		'https://oss.sonatype.org/service/local/repositories/snapshots/content/net/md-5/bungeecord-chat/1.21-R0.1-SNAPSHOT/bungeecord-chat-1.21-R0.1-20240728.110916-7.jar' \
+		-O --output-dir lib -#
+
 clean:
 	@echo -en '$(subject)Limpando ambiente..$(command)'
 	rm -rf **/*.class dist
